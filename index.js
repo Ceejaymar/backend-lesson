@@ -6,7 +6,7 @@ const port = 3002;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use((err, req, res) => {
+app.use((err, req, res, next) => {
   res.status(400).json({ error: err.toString() });
 });
 
